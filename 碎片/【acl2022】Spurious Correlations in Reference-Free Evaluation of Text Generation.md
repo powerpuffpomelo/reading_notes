@@ -15,6 +15,7 @@
 - 实验验证：某虚假关联（density测量）也能达到很好的和人类相关性
 
 ![image-20220919180914944](../toolbox/image_storage/image-20220919180914944.png)
+![image-20220919180914944](https://github.com/powerpuffpomelo/reading_notes/blob/main/toolbox/image_storage/image-20220919180914944.png)
 
 - 实验验证：控制虚假关联因素，则指标效果大幅下降。
 - 表格表示所有语言对上，各个虚假关联or指标的效果；但是在图中蓝框内，它们效果大跌。就是说，控制density相近的时候，指标也难以分辨，这说明指标很大程度上依赖density。
