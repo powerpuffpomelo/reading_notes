@@ -15,7 +15,8 @@ reinforcement learning from human feedback (RLHF)
 ## 数据集
 先人工写了一些prompt数据；训了个内测版模型，放出来让大家玩；然后收集用户玩的过程中提的问题，继续补充训练数据。
 
-样本数量：
+| 不同阶段训练数据 | 样本数量|
+| ---- | ---- |
 | SFT dataset | 13000 |
 | RM dataset | 33000 |
 | PPO dataset | 31000 |
