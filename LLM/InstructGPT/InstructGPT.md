@@ -12,6 +12,25 @@ reinforcement learning from human feedback (RLHF)
 
 为什么要有奖励模型：因为step1的训练数据不够。生成式标注的难度要远高于判别式标注的难度。
 
+### 训练SFT
+SFT阶段训了16个epoch
+
+### 训练奖励模型
+RM模型大小为6B，因为模型太大训练不稳定，loss会飞。
+
+要把排序转换成值，使用 pairwise ranking loss：
+![Alt text](image-1.png)
+其中，k是对同一个问题生成的答案数量（k=9）。对每个答案pair，都希望RM给更好的答案更高的分数，用了LR loss。
+
+### 强化学习
+使用PPO算法。目标函数如下：
+![Alt text](image-2.png)
+
+第一行是PPO目标函数：$E_(x, y)$是当前的模型对给定输入x生成的输出y，第一项$r_\theta(x, y)$是奖励模型打分，第二项$\beta\log(...)$是KL散度，因为模型更新太大的话，奖励函数打分就可能不准了，所以希望模型参数经过强化学习不要发生太大变化。
+
+第二行是原始GPT3的目标函数：第三项$\gamma...$是在GPT3训练集上做语言模型训练，希望原始的数据和能力不要丢。
+
+
 ## 数据集
 先人工写了一些prompt数据；训了个内测版模型，放出来让大家玩；然后收集用户玩的过程中提的问题，继续补充训练数据。
 
@@ -20,14 +39,12 @@ reinforcement learning from human feedback (RLHF)
 | SFT dataset | 13000 |
 | RM dataset | 33000 |
 | PPO dataset | 31000 |
-<!-- 
-样本数量：
-- SFT dataset：13000
-- RM dataset：33000
-- PPO dataset：31000 -->
+
 
 ## 效果
-1.3B参数的InstructGPT要好于175B参数的GPT3
+1.3B参数的InstructGPT要好于175B参数的GPT3。
+![Alt text](image-3.png)
 
 ## reference
 - 论文：[Training language models to follow instructions with human feedback](https://arxiv.org/pdf/2203.02155.pdf)
+- [InstructGPT 论文精读【论文精读·48】](https://www.bilibili.com/video/BV1hd4y187CR/?spm_id_from=333.788&vd_source=cde29199d71ef3753989894755f4f724)
