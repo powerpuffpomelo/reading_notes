@@ -22,6 +22,8 @@ RM模型大小为6B，因为模型太大训练不稳定，loss会飞。
 ![Alt text](image-1.png)
 其中，k是对同一个问题生成的答案数量（k=9）。对每个答案pair，都希望RM给更好的答案更高的分数，用了LR loss。
 
+简言之，reward model输入的是instruct和response，输出的是一个打分，代表response的好坏。reward model用pair wise的对比损失来训练。
+
 ### 强化学习
 使用PPO算法。目标函数如下：
 ![Alt text](image-2.png)
@@ -29,6 +31,12 @@ RM模型大小为6B，因为模型太大训练不稳定，loss会飞。
 第一行是PPO目标函数：$E_(x, y)$是当前的模型对给定输入x生成的输出y，第一项$r_\theta(x, y)$是奖励模型打分，第二项$\beta\log(...)$是KL散度，因为模型更新太大的话，奖励函数打分就可能不准了，所以希望模型参数经过强化学习不要发生太大变化。
 
 第二行是原始GPT3的目标函数：第三项$\gamma...$是在GPT3训练集上做语言模型训练，希望原始的数据和能力不要丢。
+
+PPO需要同时加载4个模型：
+- the trained model
+- the reference model (for KL estimation)
+- the critic model
+- the reward model
 
 
 ## 数据集
@@ -48,3 +56,4 @@ RM模型大小为6B，因为模型太大训练不稳定，loss会飞。
 ## reference
 - 论文：[Training language models to follow instructions with human feedback](https://arxiv.org/pdf/2203.02155.pdf)
 - [InstructGPT 论文精读【论文精读·48】](https://www.bilibili.com/video/BV1hd4y187CR/?spm_id_from=333.788&vd_source=cde29199d71ef3753989894755f4f724)
+- [RLHF教程，有代码](https://wandb.ai/carperai/summarize_RLHF/reports/Implementing-RLHF-Learning-to-Summarize-with-trlX--VmlldzozMzAwODM2)
