@@ -18,6 +18,7 @@ RRHF利用不同来源的生成结果数据进行训练。
 用模型生成不同结果的log概率作为score，score要符合人类认为合理的顺序。
 本文使用reward model给出的分数排序（而不是绝对打分）对模型做优化。
 
+核心代码 [RRHFTrainer.py](RRHFTrainer.py)
 
 【排序loss】
 如下方公式所示，$p_i$是模型生成第$i$个response的概率。$r_i$是第$i$个response获得的reward打分。这个排序loss要求，模型要给reward更高的response更高的输出概率。
