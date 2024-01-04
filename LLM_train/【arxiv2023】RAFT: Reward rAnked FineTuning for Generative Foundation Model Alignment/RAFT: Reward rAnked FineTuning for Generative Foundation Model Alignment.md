@@ -1,6 +1,7 @@
 # RAFT: Reward rAnked FineTuning for Generative Foundation Model Alignment
 
 论文链接 [RAFT: Reward rAnked FineTuning for Generative Foundation Model Alignment](https://arxiv.org/abs/2304.06767)
+
 OpenReview: https://openreview.net/forum?id=m7p5O7zblY
 
 ## 动机

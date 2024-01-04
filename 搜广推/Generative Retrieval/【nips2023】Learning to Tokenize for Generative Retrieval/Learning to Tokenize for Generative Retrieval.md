@@ -68,6 +68,9 @@ docid就是m个z（其中每个z只能从k个固定的向量里选）
 - 在NQ320K上达到sota
 - 泛化性强：在没见过的文档上显著提升
 
+![Alt text](image-3.png)
+
+![Alt text](image-4.png)
 
 ## 相关工作
 ### sparse retrieval

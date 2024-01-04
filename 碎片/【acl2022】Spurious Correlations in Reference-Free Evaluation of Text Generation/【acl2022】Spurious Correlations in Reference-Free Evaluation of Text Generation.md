@@ -14,22 +14,22 @@
 - 度量词重叠的两个指标：coverage和density。coverage测量摘要中有多少词在文章中出现过；density看摘要中来自文章的片段的平均长度
 - 实验验证：某虚假关联（density测量）也能达到很好的和人类相关性
 
-![image-20220919180914944](https://github.com/powerpuffpomelo/reading_notes/blob/main/toolbox/image_storage/image-20220919180914944.png)
+![image-20220919180914944](image-20220919180914944.png)
 
 - 实验验证：控制虚假关联因素，则指标效果大幅下降。
 - 表格表示所有语言对上，各个虚假关联or指标的效果；但是在图中蓝框内，它们效果大跌。就是说，控制density相近的时候，指标也难以分辨，这说明指标很大程度上依赖density。
 
-![image-20220919181010637](https://github.com/powerpuffpomelo/reading_notes/blob/main/toolbox/image_storage/image-20220919181010637.png)
+![image-20220919181010637](image-20220919181010637.png)
 
-![image-20220919181104244](https://github.com/powerpuffpomelo/reading_notes/blob/main/toolbox/image_storage/image-20220919181104244.png)
+![image-20220919181104244](image-20220919181104244.png)
 
 #### 对抗训练
 - 对抗训练：让表示更少地依赖虚假关联
 - 模型除了预测评估分数的头，还有一个预测虚假关联分数的头。目标是：希望表示能很好地预测评估分数，但预测虚假关联很困难。所以，虚假关联预测器的梯度被反转，从而让预测评估分数更少地依赖虚假关联。
 - λ初始0，逐渐增加到1
-![image-20220919173012082](https://github.com/powerpuffpomelo/reading_notes/blob/main/toolbox/image_storage/image-20220919173012082.png)
+![image-20220919173012082](image-20220919173012082.png)
 - 对抗训练实验结果超好，改进非常明显，而且在所有pairs上也做得更好了
-![image-20220919175516111](https://github.com/powerpuffpomelo/reading_notes/blob/main/toolbox/image_storage/image-20220919175516111.png)
+![image-20220919175516111](image-20220919175516111.png)
 
 ## 思考总结
 ### 一些想法&疑惑
