@@ -2,6 +2,8 @@
 
 论文链接 [Learning to Tokenize for Generative Retrieval](https://arxiv.org/pdf/2304.04171.pdf)
 
+![Alt text](image-5.png)
+
 ## 一句话概括
 **本文使用自编码的方式生成文档标识docid。**
 通过优化文档标识，能够提升生成式检索效果。
@@ -69,6 +71,10 @@ docid就是m个z（其中每个z只能从k个固定的向量里选）
 - 泛化性强：在没见过的文档上显著提升
 
 ![Alt text](image-3.png)
+
+![Alt text](image-6.png)
+
+![Alt text](image-7.png)
 
 ![Alt text](image-4.png)
 
