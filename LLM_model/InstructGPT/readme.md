@@ -56,4 +56,5 @@ PPO需要同时加载4个模型：
 ## reference
 - 论文：[Training language models to follow instructions with human feedback](https://arxiv.org/pdf/2203.02155.pdf)
 - [InstructGPT 论文精读【论文精读·48】](https://www.bilibili.com/video/BV1hd4y187CR/?spm_id_from=333.788&vd_source=cde29199d71ef3753989894755f4f724)
+- [详解大模型RLHF过程（配代码解读）](https://zhuanlan.zhihu.com/p/624589622)
 - [RLHF教程，有代码](https://wandb.ai/carperai/summarize_RLHF/reports/Implementing-RLHF-Learning-to-Summarize-with-trlX--VmlldzozMzAwODM2)

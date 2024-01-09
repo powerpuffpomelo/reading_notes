@@ -26,3 +26,8 @@ Differentiable Search Index (DSI) 需要解决两个问题：
 ## 实验
 数据集: 
 MS MARCO dataset, NQ 100K dataset
+
+### 实验结果
+![Alt text](image-5.png)
+
+![Alt text](image-6.png)

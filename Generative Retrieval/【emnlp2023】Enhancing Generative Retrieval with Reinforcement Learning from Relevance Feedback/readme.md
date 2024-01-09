@@ -43,10 +43,27 @@ reward model 架构在 SFT好的模型基础上，添加一个随机初始化的
 使用 pairwise 损失进行训练。
 ![Alt text](image-4.png)
 
+### Reinforced L2R
+Pointwise Optimization.
+![Alt text](image-5.png)
+
+Pairwise Optimization.
+![Alt text](image-6.png)
+
+Listwise Optimization.
+![Alt text](image-7.png)
+
 ## 实验
-### Empirical study
+### 前置实验：Empirical study
 在两个现有模型上对比了 dense retrieval 和 generative retrieval，发现 generative retrieval 在 top1 结果上表现更好，但是 dense retrieval 在排序上有更均衡的效果。
 ![Alt text](image-1.png)
+
+### 实验设置
+**数据集**： MS MARCO，NQ320k
+
+
+### 实验结果
+![Alt text](image-8.png)
 
 ## 细节
 使用 constrained beam search，保证生成有效的 docid。
