@@ -12,7 +12,7 @@ import json
 class RRHFTrainer(Trainer):
     def gather_logits_labels(self, logits, labels):
         """
-        从预测的logit中收集真实标签对应位置的logit，同时忽略那些被标记为-100的位置。
+        从预测的logit中收集真实标签对应位置的logit（输出真实token的log概率），同时忽略那些被标记为-100的位置。
         输出: [bsz, seq_len]
         """
         mask = (labels != -100).float()
