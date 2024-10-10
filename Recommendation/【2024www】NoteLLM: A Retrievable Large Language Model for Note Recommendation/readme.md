@@ -32,3 +32,6 @@ In this paper, we propose a novel unified framework called NoteLLM, which levera
     ![Alt text](image-3.png)
 
 ### Collaborative Supervised Fine-Tuning
+- 生成主题标签/类别的任务从文本生成的角度提取关键笔记信息，而生成笔记嵌入的任务从协作的角度将笔记压缩为虚拟词，以进行 I2I 推荐。
+
+    ![Alt text](image-4.png)
